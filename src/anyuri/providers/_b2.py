@@ -51,9 +51,23 @@ class B2Uri(AnyUri):
 
     @classmethod
     def validate(cls, value: Any) -> B2Uri:
+        """Validate and return a ``B2Uri`` for ``value``.
+
+        Args:
+            value: A ``b2://bucket/key`` or
+                ``https://f<N>.backblazeb2.com/file/bucket/key`` URI string.
+
+        Raises:
+            UriSchemaError: If ``value`` is not a valid B2 URI.
+        """
         return cls(cls._validate(value))
 
     def as_uri(self) -> str:
+        """Return the canonical ``b2://bucket/key`` form.
+
+        Returns:
+            A ``b2://`` URI string.
+        """
         return str(self)  # already in b2:// form
 
 

@@ -47,9 +47,23 @@ class R2Uri(AnyUri):
 
     @classmethod
     def validate(cls, value: Any) -> R2Uri:
+        """Validate and return an ``R2Uri`` for ``value``.
+
+        Args:
+            value: An ``r2://account/bucket/key`` or
+                ``https://<account>.r2.cloudflarestorage.com/`` URI string.
+
+        Raises:
+            UriSchemaError: If ``value`` is not a valid R2 URI.
+        """
         return cls(cls._validate(value))
 
     def as_uri(self) -> str:
+        """Return the canonical ``r2://account/bucket/key`` form.
+
+        Returns:
+            An ``r2://`` URI string.
+        """
         # https://accountid.r2.cloudflarestorage.com/bucket/key → r2://accountid/bucket/key
         p = urlparse(str(self))
         account = (p.hostname or "").split(".")[0]

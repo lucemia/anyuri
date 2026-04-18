@@ -188,6 +188,14 @@ class HttpUri(AnyUri):
 
     @classmethod
     def validate(cls, value: Any) -> HttpUri:
+        """Validate and return an ``HttpUri`` for ``value``.
+
+        Args:
+            value: An ``http://`` or ``https://`` URI string.
+
+        Raises:
+            UriSchemaError: If ``value`` is not a valid HTTP/HTTPS URI.
+        """
         return cls(cls._validate(value))
 
 
@@ -222,9 +230,23 @@ class FileUri(AnyUri):
 
     @classmethod
     def validate(cls, value: Any) -> FileUri:
+        """Validate and return a ``FileUri`` for ``value``.
+
+        Args:
+            value: A POSIX path, ``file:///path``, or ``file://localhost/path`` string.
+                Relative paths are resolved against the current working directory.
+
+        Raises:
+            UriSchemaError: If ``value`` is not a valid local file URI.
+        """
         return cls(cls._validate(value))
 
     def as_uri(self) -> str:
+        """Return the canonical ``file://localhost/path`` form.
+
+        Returns:
+            A ``file://localhost/`` URI string.
+        """
         return f"file://localhost{self}"
 
 

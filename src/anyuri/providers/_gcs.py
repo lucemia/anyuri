@@ -42,9 +42,22 @@ class GSUri(AnyUri):
 
     @classmethod
     def validate(cls, value: Any) -> GSUri:
+        """Validate and return a ``GSUri`` for ``value``.
+
+        Args:
+            value: A ``gs://`` or ``https://storage.googleapis.com/`` URI string.
+
+        Raises:
+            UriSchemaError: If ``value`` is not a valid GCS URI.
+        """
         return cls(cls._validate(value))
 
     def as_uri(self) -> str:
+        """Return the canonical ``gs://bucket/key`` form.
+
+        Returns:
+            A ``gs://`` URI string.
+        """
         return str(self).replace("https://storage.googleapis.com/", "gs://", 1)
 
 

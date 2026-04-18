@@ -55,9 +55,23 @@ class AzureUri(AnyUri):
 
     @classmethod
     def validate(cls, value: Any) -> AzureUri:
+        """Validate and return an ``AzureUri`` for ``value``.
+
+        Args:
+            value: An ``abfs://``, ``abfss://``, or
+                ``https://<account>.blob.core.windows.net/`` URI string.
+
+        Raises:
+            UriSchemaError: If ``value`` is not a valid Azure Blob Storage URI.
+        """
         return cls(cls._validate(value))
 
     def as_uri(self) -> str:
+        """Return the canonical ``abfs://container@account.dfs.core.windows.net/path`` form.
+
+        Returns:
+            An ``abfs://`` URI string.
+        """
         # https://account.blob.core.windows.net/container/path/file
         # → abfs://container@account.dfs.core.windows.net/path/file
         p = urlparse(str(self))

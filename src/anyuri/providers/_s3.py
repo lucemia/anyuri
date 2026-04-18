@@ -62,9 +62,22 @@ class S3Uri(AnyUri):
 
     @classmethod
     def validate(cls, value: Any) -> S3Uri:
+        """Validate and return an ``S3Uri`` for ``value``.
+
+        Args:
+            value: An ``s3://``, virtual-hosted, or path-style HTTPS S3 URI string.
+
+        Raises:
+            UriSchemaError: If ``value`` is not a valid S3 URI.
+        """
         return cls(cls._validate(value))
 
     def as_uri(self) -> str:
+        """Return the canonical ``s3://bucket/key`` form.
+
+        Returns:
+            An ``s3://`` URI string.
+        """
         # https://bucket.s3.amazonaws.com/key → s3://bucket/key
         p = urlparse(str(self))
         bucket = (p.hostname or "").split(".")[0]
