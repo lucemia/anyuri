@@ -5,8 +5,8 @@ from unittest.mock import MagicMock
 import pytest
 
 from anyuri import FileUri
-from anyuri.providers._gcs import GSUri
 from anyuri.io._handlers._gcs import _gcs_download, _gcs_upload
+from anyuri.providers._gcs import GSUri
 
 
 def _mock_gcs() -> MagicMock:

@@ -145,13 +145,13 @@ def test_public_api_importable() -> None:
 
 def test_all_providers_registered_after_import() -> None:
     import anyuri.io  # noqa: F401 — triggers handler registration
+    from anyuri import FileUri
     from anyuri.io._registry import _download_registry, _upload_registry
-    from anyuri.providers._gcs import GSUri
-    from anyuri.providers._s3 import S3Uri
     from anyuri.providers._azure import AzureUri
-    from anyuri.providers._r2 import R2Uri
     from anyuri.providers._b2 import B2Uri
-    from anyuri import HttpUri, FileUri
+    from anyuri.providers._gcs import GSUri
+    from anyuri.providers._r2 import R2Uri
+    from anyuri.providers._s3 import S3Uri
 
     for uri_cls in [HttpUri, FileUri, GSUri, S3Uri, AzureUri, R2Uri, B2Uri]:
         assert uri_cls in _download_registry, f"No download handler for {uri_cls.__name__}"

@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-from anyuri._exceptions import DownloadError, UploadError
-
 from anyuri import AnyUri, FileUri
+from anyuri._exceptions import DownloadError, UploadError
 from anyuri.io._registry import (
     _download_registry,
     _upload_registry,

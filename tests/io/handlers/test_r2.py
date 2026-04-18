@@ -5,8 +5,8 @@ from unittest.mock import MagicMock
 import pytest
 
 from anyuri import FileUri
-from anyuri.providers._r2 import R2Uri
 from anyuri.io._handlers._r2 import _r2_download, _r2_upload
+from anyuri.providers._r2 import R2Uri
 
 
 def test_r2_download(tmp_path: pathlib.Path, mock_boto3: MagicMock) -> None:

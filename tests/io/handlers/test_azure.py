@@ -5,8 +5,8 @@ from unittest.mock import MagicMock
 import pytest
 
 from anyuri import FileUri
-from anyuri.providers._azure import AzureUri
 from anyuri.io._handlers._azure import _azure_download, _azure_upload
+from anyuri.providers._azure import AzureUri
 
 
 def _mock_azure() -> MagicMock:

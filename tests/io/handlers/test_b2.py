@@ -5,8 +5,8 @@ from unittest.mock import MagicMock
 import pytest
 
 from anyuri import FileUri
-from anyuri.providers._b2 import B2Uri
 from anyuri.io._handlers._b2 import _b2_download, _b2_upload
+from anyuri.providers._b2 import B2Uri
 
 
 def _mock_b2sdk() -> MagicMock:

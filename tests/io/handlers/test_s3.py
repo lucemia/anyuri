@@ -5,8 +5,8 @@ from unittest.mock import MagicMock
 import pytest
 
 from anyuri import FileUri
-from anyuri.providers._s3 import S3Uri
 from anyuri.io._handlers._s3 import _s3_download, _s3_upload
+from anyuri.providers._s3 import S3Uri
 
 
 def test_s3_download(tmp_path: pathlib.Path, mock_boto3: MagicMock) -> None:
