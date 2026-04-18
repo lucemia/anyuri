@@ -33,6 +33,11 @@ from anyuri.providers._s3 import S3Uri  # importing registers S3Uri
             "s3://mybucket/subdir/key.jpg",
             "https://mybucket.s3.amazonaws.com/subdir/key.jpg",
         ),
+        (
+            "s3://mybucket/key.jpg?versionId=abc123",
+            "s3://mybucket/key.jpg",
+            "https://mybucket.s3.amazonaws.com/key.jpg?versionId=abc123",
+        ),
     ],
 )
 def test_s3uri(uri: str, expected_uri: str, expected_source: str) -> None:

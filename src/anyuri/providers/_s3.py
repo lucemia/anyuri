@@ -32,9 +32,9 @@ class S3Uri(AnyUri):
         p = urlparse(v)
 
         if p.scheme == "s3":
-            bucket = p.netloc
-            key = p.path
-            return f"https://{bucket}.s3.amazonaws.com{key}"
+            qs = f"?{p.query}" if p.query else ""
+            frag = f"#{p.fragment}" if p.fragment else ""
+            return f"https://{p.netloc}.s3.amazonaws.com{p.path}{qs}{frag}"
 
         if p.scheme in {"http", "https"}:
             hostname = p.hostname or ""

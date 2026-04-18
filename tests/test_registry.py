@@ -2,7 +2,6 @@ import pytest
 
 from anyuri import AnyUri, HttpUri
 from anyuri._exceptions import UriSchemaError
-from tests.conftest import clean_registry  # noqa: F401 — imported for fixture
 
 
 def test_register_explicit(clean_registry: None) -> None:  # type: ignore[type-arg]
