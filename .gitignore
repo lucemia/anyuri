@@ -11,3 +11,4 @@ build/
 venv/
 .coverage
 htmlcov/
+uv.lock

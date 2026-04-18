@@ -25,7 +25,7 @@ azure   = ["azure-storage-blob"]
 r2      = ["boto3"]
 b2      = ["b2sdk"]
 all     = ["google-cloud-storage", "boto3", "azure-storage-blob", "b2sdk"]
-pydantic = ["pydantic>=1.0"]
+pydantic = ["pydantic>=2.0"]
 
 [dependency-groups]
 dev = [
@@ -34,7 +34,8 @@ dev = [
     "pytest-datadir>=1.5.0",
     "syrupy>=4.6.0",
     "mypy>=1.9.0",
-    "ruff",
+    "ruff>=0.4.0",
+    "build>=1.0",
     "pydantic>=2.0",
 ]
 
