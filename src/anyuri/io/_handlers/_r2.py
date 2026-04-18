@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 from anyuri import FileUri
-from anyuri.providers._r2 import R2Uri
 from anyuri.io._registry import register_download, register_upload
+from anyuri.providers._r2 import R2Uri
 
 
 @register_download(R2Uri)

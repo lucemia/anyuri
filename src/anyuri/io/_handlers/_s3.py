@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 from anyuri import FileUri
-from anyuri.providers._s3 import S3Uri
 from anyuri.io._registry import register_download, register_upload
+from anyuri.providers._s3 import S3Uri
 
 
 @register_download(S3Uri)

@@ -1,4 +1,5 @@
 from anyuri.io._core import download, upload
-from anyuri.io._handlers import _http, _file, _gcs, _s3, _azure, _r2, _b2  # noqa: F401
+from anyuri.io._handlers import _azure, _b2, _file, _gcs, _http, _r2, _s3  # noqa: F401
+from anyuri.io._registry import register_download, register_upload
 
-__all__ = ["download", "upload"]
+__all__ = ["download", "upload", "register_download", "register_upload"]

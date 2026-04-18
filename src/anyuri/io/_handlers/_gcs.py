@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 from anyuri import FileUri
-from anyuri.providers._gcs import GSUri
 from anyuri.io._registry import register_download, register_upload
+from anyuri.providers._gcs import GSUri
 
 
 @register_download(GSUri)
