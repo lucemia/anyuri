@@ -1,0 +1,14 @@
+{
+  "as_source": "https://example.com/foo2",
+  "as_uri": "https://example.com/foo2",
+  "fragment": "",
+  "netloc": "example.com",
+  "params": "",
+  "path": "/foo2",
+  "query": "",
+  "repr": "HttpUri(\"https://example.com/foo2\")",
+  "scheme": "https",
+  "self": "https://example.com/foo2",
+  "str": "https://example.com/foo2",
+  "type": "<class 'anyuri.HttpUri'>"
+}

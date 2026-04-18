@@ -1,0 +1,14 @@
+{
+  "as_source": "/%e8.txt",
+  "as_uri": "file://localhost/%e8.txt",
+  "fragment": "",
+  "netloc": "localhost",
+  "params": "",
+  "path": "/%e8.txt",
+  "query": "",
+  "repr": "FileUri(\"file://localhost/%e8.txt\")",
+  "scheme": "file",
+  "self": "/%e8.txt",
+  "str": "/%e8.txt",
+  "type": "<class 'anyuri.FileUri'>"
+}

@@ -1,0 +1,14 @@
+{
+  "as_source": "/1.jpg",
+  "as_uri": "file://localhost/1.jpg",
+  "fragment": "",
+  "netloc": "localhost",
+  "params": "",
+  "path": "/1.jpg",
+  "query": "",
+  "repr": "FileUri(\"file://localhost/1.jpg\")",
+  "scheme": "file",
+  "self": "/1.jpg",
+  "str": "/1.jpg",
+  "type": "<class 'anyuri.FileUri'>"
+}

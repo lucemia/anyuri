@@ -1,0 +1,14 @@
+{
+  "as_source": "http://example.com/1.jpg?q=1",
+  "as_uri": "http://example.com/1.jpg?q=1",
+  "fragment": "",
+  "netloc": "example.com",
+  "params": "",
+  "path": "/1.jpg",
+  "query": "q=1",
+  "repr": "HttpUri(\"http://example.com/1.jpg?q=1\")",
+  "scheme": "http",
+  "self": "http://example.com/1.jpg?q=1",
+  "str": "http://example.com/1.jpg?q=1",
+  "type": "<class 'anyuri.HttpUri'>"
+}

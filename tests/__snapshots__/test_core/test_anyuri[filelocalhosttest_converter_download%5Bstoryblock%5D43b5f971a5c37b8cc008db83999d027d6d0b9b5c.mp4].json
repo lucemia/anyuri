@@ -1,0 +1,14 @@
+{
+  "as_source": "/test_converter_download[storyblock]/43b5f971a5c37b8cc008db83999d027d6d0b9b5c.mp4",
+  "as_uri": "file://localhost/test_converter_download[storyblock]/43b5f971a5c37b8cc008db83999d027d6d0b9b5c.mp4",
+  "fragment": "",
+  "netloc": "localhost",
+  "params": "",
+  "path": "/test_converter_download[storyblock]/43b5f971a5c37b8cc008db83999d027d6d0b9b5c.mp4",
+  "query": "",
+  "repr": "FileUri(\"file://localhost/test_converter_download[storyblock]/43b5f971a5c37b8cc008db83999d027d6d0b9b5c.mp4\")",
+  "scheme": "file",
+  "self": "/test_converter_download[storyblock]/43b5f971a5c37b8cc008db83999d027d6d0b9b5c.mp4",
+  "str": "/test_converter_download[storyblock]/43b5f971a5c37b8cc008db83999d027d6d0b9b5c.mp4",
+  "type": "<class 'anyuri.FileUri'>"
+}
