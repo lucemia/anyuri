@@ -96,7 +96,7 @@ from anyuri.providers import GSUri, S3Uri   # registers both
 |---|---|---|---|---|
 | `GSUri` | `gs://bucket/key` | `storage.googleapis.com/bucket/key` | `gs://bucket/key` | `https://storage.googleapis.com/bucket/key` |
 | `S3Uri` | `s3://bucket/key` | `<bucket>.s3.amazonaws.com/key` or `s3.amazonaws.com/<bucket>/key` | `s3://bucket/key` | `https://<bucket>.s3.amazonaws.com/key` |
-| `AzureUri` | `az://<account>/container/blob` | `<account>.blob.core.windows.net/container/blob` | `az://<account>/container/blob` | `https://<account>.blob.core.windows.net/container/blob` |
+| `AzureUri` | `abfs://<container>@<account>.dfs.core.windows.net/<path>` | `<account>.blob.core.windows.net/<container>/<path>` | `abfs://<container>@<account>.dfs.core.windows.net/<path>` | `https://<account>.blob.core.windows.net/<container>/<path>` |
 | `R2Uri` | `r2://<account>/bucket/key` | `<account>.r2.cloudflarestorage.com/bucket/key` | `r2://<account>/bucket/key` | `https://<account>.r2.cloudflarestorage.com/bucket/key` |
 | `B2Uri` | `b2://bucket/key` | `f<N>.backblazeb2.com/file/bucket/key` | `b2://bucket/key` | `https://f<N>.backblazeb2.com/file/bucket/key` |
 
