@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://lucemia.github.io/anyuri/</loc>
+         <lastmod>2026-04-18</lastmod>
+    </url>
+    <url>
+         <loc>https://lucemia.github.io/anyuri/api/anyuri/</loc>
+         <lastmod>2026-04-18</lastmod>
+    </url>
+    <url>
+         <loc>https://lucemia.github.io/anyuri/api/exceptions/</loc>
+         <lastmod>2026-04-18</lastmod>
+    </url>
+    <url>
+         <loc>https://lucemia.github.io/anyuri/api/providers/</loc>
+         <lastmod>2026-04-18</lastmod>
+    </url>
+    <url>
+         <loc>https://lucemia.github.io/anyuri/api/utils/</loc>
+         <lastmod>2026-04-18</lastmod>
+    </url>
+    <url>
+         <loc>https://lucemia.github.io/anyuri/superpowers/plans/2026-04-18-anyuri-implementation/</loc>
+         <lastmod>2026-04-18</lastmod>
+    </url>
+    <url>
+         <loc>https://lucemia.github.io/anyuri/superpowers/specs/2026-04-18-opensource-anyuri-design/</loc>
+         <lastmod>2026-04-18</lastmod>
+    </url>
+</urlset>
