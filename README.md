@@ -82,6 +82,10 @@ class SFTPUri(AnyUri):
 AnyUri("sftp://host/path")  # → SFTPUri
 ```
 
+## Acknowledgements
+
+This project would not exist without the support of my wife, Agnes, whose patience and encouragement make everything possible.
+
 ## Pydantic Integration
 
 ```python
