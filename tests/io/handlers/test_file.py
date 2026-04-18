@@ -1,4 +1,3 @@
-# tests/io/handlers/test_file.py
 import pathlib
 
 from anyuri import FileUri

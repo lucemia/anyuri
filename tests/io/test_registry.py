@@ -1,4 +1,5 @@
-# tests/io/test_registry.py
+from __future__ import annotations
+
 from anyuri._exceptions import DownloadError, UploadError
 
 from anyuri import AnyUri, FileUri

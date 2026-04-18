@@ -11,8 +11,6 @@ def _http_download(uri: HttpUri, target: FileUri) -> FileUri:
     req = Request(str(uri), headers={"User-Agent": "Mozilla/5.0"})
     with urlopen(req) as response:
         with open(str(target), "wb") as f:
-            f.write(response.read())
+            while chunk := response.read(1 << 16):
+                f.write(chunk)
     return target
-
-
-__all__ = ["_http_download"]

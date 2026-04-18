@@ -1,4 +1,3 @@
-# tests/io/handlers/test_http.py
 import pathlib
 from unittest.mock import MagicMock, patch
 
@@ -13,7 +12,7 @@ def test_http_download_writes_response(tmp_path: pathlib.Path) -> None:
     mock_response = MagicMock()
     mock_response.__enter__ = lambda s: s
     mock_response.__exit__ = MagicMock(return_value=False)
-    mock_response.read.return_value = b"video content"
+    mock_response.read.side_effect = [b"video content", b""]
 
     with patch("anyuri.io._handlers._http.urlopen", return_value=mock_response):
         result = _http_download(uri, target)

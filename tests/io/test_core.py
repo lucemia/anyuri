@@ -1,4 +1,3 @@
-# tests/io/test_core.py
 from __future__ import annotations
 
 import pathlib

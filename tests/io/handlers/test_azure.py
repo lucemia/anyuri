@@ -1,4 +1,3 @@
-# tests/io/handlers/test_azure.py
 import pathlib
 import sys
 from unittest.mock import MagicMock
@@ -25,7 +24,13 @@ def test_azure_download(tmp_path: pathlib.Path) -> None:
     mock_blob_module = _mock_azure()
     mock_client = mock_blob_module.BlobServiceClient.return_value
     mock_blob = mock_client.get_blob_client.return_value
-    mock_blob.download_blob.return_value.readall.return_value = b"azure content"
+
+    def _readinto(f: object) -> int:
+        assert hasattr(f, "write")
+        f.write(b"azure content")  # type: ignore[union-attr]
+        return len(b"azure content")
+
+    mock_blob.download_blob.return_value.readinto.side_effect = _readinto
 
     uri = AzureUri("abfs://container@account.dfs.core.windows.net/path/file.mp4")
     target = FileUri(str(tmp_path / "file.mp4"))

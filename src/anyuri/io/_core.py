@@ -3,7 +3,6 @@ from __future__ import annotations
 import os
 import re
 import tempfile
-from urllib.parse import urlparse
 from uuid import uuid4
 
 from anyuri import AnyUri, FileUri
@@ -12,8 +11,7 @@ from anyuri.io._registry import _download_registry, _upload_registry
 
 
 def _extract_ext(uri: AnyUri) -> str | None:
-    path = urlparse(str(uri)).path
-    name = path.rstrip("/").rsplit("/", 1)[-1]
+    name = uri.path.rstrip("/").rsplit("/", 1)[-1]
     m = re.search(r"\.[A-Za-z0-9]{1,10}$", name)
     return m.group(0) if m else None
 
@@ -35,7 +33,7 @@ def _dispatch_upload(src: FileUri, dst: AnyUri) -> AnyUri:
 
 
 def download(uri: AnyUri | str) -> FileUri:
-    return _dispatch_download(AnyUri(uri))
+    return _dispatch_download(uri if isinstance(uri, AnyUri) else AnyUri(uri))
 
 
 def upload(src: AnyUri | str, dst: AnyUri | str) -> AnyUri:

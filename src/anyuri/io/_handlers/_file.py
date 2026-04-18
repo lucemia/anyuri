@@ -11,5 +11,3 @@ def _file_download(uri: FileUri, target: FileUri) -> FileUri:
     shutil.copy(str(uri), str(target))
     return target
 
-
-__all__ = ["_file_download"]

@@ -1,4 +1,3 @@
-# tests/io/handlers/test_b2.py
 import pathlib
 import sys
 from unittest.mock import MagicMock

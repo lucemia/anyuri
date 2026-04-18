@@ -1,4 +1,3 @@
-# tests/io/handlers/test_s3.py
 import pathlib
 import sys
 from unittest.mock import MagicMock
@@ -10,14 +9,7 @@ from anyuri.providers._s3 import S3Uri
 from anyuri.io._handlers._s3 import _s3_download, _s3_upload
 
 
-def _mock_boto3() -> MagicMock:
-    mock_boto3 = MagicMock()
-    sys.modules["boto3"] = mock_boto3
-    return mock_boto3
-
-
-def test_s3_download(tmp_path: pathlib.Path) -> None:
-    mock_boto3 = _mock_boto3()
+def test_s3_download(tmp_path: pathlib.Path, mock_boto3: MagicMock) -> None:
     mock_s3 = mock_boto3.client.return_value
 
     uri = S3Uri("s3://my-bucket/path/video.mp4")
@@ -30,8 +22,7 @@ def test_s3_download(tmp_path: pathlib.Path) -> None:
     assert result == target
 
 
-def test_s3_upload(tmp_path: pathlib.Path) -> None:
-    mock_boto3 = _mock_boto3()
+def test_s3_upload(tmp_path: pathlib.Path, mock_boto3: MagicMock) -> None:
     mock_s3 = mock_boto3.client.return_value
 
     src_path = str(tmp_path / "src.mp4")

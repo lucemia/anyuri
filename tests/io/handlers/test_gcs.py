@@ -1,4 +1,3 @@
-# tests/io/handlers/test_gcs.py
 import pathlib
 import sys
 from unittest.mock import MagicMock

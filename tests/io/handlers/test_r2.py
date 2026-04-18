@@ -1,4 +1,3 @@
-# tests/io/handlers/test_r2.py
 import pathlib
 import sys
 from unittest.mock import MagicMock
@@ -10,14 +9,7 @@ from anyuri.providers._r2 import R2Uri
 from anyuri.io._handlers._r2 import _r2_download, _r2_upload
 
 
-def _mock_boto3() -> MagicMock:
-    mock_boto3 = MagicMock()
-    sys.modules["boto3"] = mock_boto3
-    return mock_boto3
-
-
-def test_r2_download(tmp_path: pathlib.Path) -> None:
-    mock_boto3 = _mock_boto3()
+def test_r2_download(tmp_path: pathlib.Path, mock_boto3: MagicMock) -> None:
     mock_s3 = mock_boto3.client.return_value
 
     uri = R2Uri("r2://accountid/bucket/path/video.mp4")
@@ -32,8 +24,7 @@ def test_r2_download(tmp_path: pathlib.Path) -> None:
     assert result == target
 
 
-def test_r2_upload(tmp_path: pathlib.Path) -> None:
-    mock_boto3 = _mock_boto3()
+def test_r2_upload(tmp_path: pathlib.Path, mock_boto3: MagicMock) -> None:
     mock_s3 = mock_boto3.client.return_value
 
     src_path = str(tmp_path / "src.mp4")
