@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      id-token: write  # required for PyPI Trusted Publishing
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # required for setuptools-scm to determine version
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Install build deps
+        run: uv sync
+
+      - name: Build package
+        run: uv run python -m build
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
