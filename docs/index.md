@@ -23,6 +23,25 @@ pip install anyuri[all]             # all cloud providers
 pip install anyuri[all,pydantic]    # + Pydantic integration
 ```
 
+## Download & Upload
+
+`anyuri.io` adds I/O without touching the zero-dependency core. Cloud SDKs are
+lazy-imported — `import anyuri.io` is always safe.
+
+```python
+from anyuri.io import download, upload
+
+# Download any URI to a local temp file
+local = download("gs://bucket/video.mp4")
+local = download("s3://bucket/video.mp4")
+local = download("https://example.com/video.mp4")
+
+# Upload to cloud (trailing / → auto-generated filename)
+result = upload("/local/video.mp4", "gs://bucket/videos/")   # → GSUri
+result = upload("/local/video.mp4", "s3://bucket/out.mp4")   # → S3Uri
+result = upload("gs://src/video.mp4", "s3://dst/")           # cloud-to-cloud
+```
+
 ## Supported URI Types
 
 | Class | Schemes accepted | `as_uri()` | `as_source()` |

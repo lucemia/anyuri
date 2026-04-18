@@ -43,6 +43,7 @@ nav:
   - API Documentation:
       - AnyUri: api/anyuri.md
       - Providers: api/providers.md
+      - I/O (download & upload): api/io.md
       - Exceptions: api/exceptions.md
       - Utils: api/utils.md
 
