@@ -8,7 +8,7 @@ from anyuri.providers._b2 import B2Uri
 @register_download(B2Uri)
 def _b2_download(uri: B2Uri, target: FileUri) -> FileUri:
     try:
-        import b2sdk.v2 as b2  # type: ignore[import]
+        import b2sdk.v2 as b2
     except ImportError:
         raise ImportError("Install anyuri[b2] for B2 support: pip install anyuri[b2]")
     api = b2.B2Api(b2.InMemoryAccountInfo())
@@ -20,7 +20,7 @@ def _b2_download(uri: B2Uri, target: FileUri) -> FileUri:
 @register_upload(B2Uri)
 def _b2_upload(src: FileUri, dst: B2Uri) -> B2Uri:
     try:
-        import b2sdk.v2 as b2  # type: ignore[import]
+        import b2sdk.v2 as b2
     except ImportError:
         raise ImportError("Install anyuri[b2] for B2 support: pip install anyuri[b2]")
     api = b2.B2Api(b2.InMemoryAccountInfo())

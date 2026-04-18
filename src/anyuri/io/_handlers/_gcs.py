@@ -8,7 +8,7 @@ from anyuri.providers._gcs import GSUri
 @register_download(GSUri)
 def _gcs_download(uri: GSUri, target: FileUri) -> FileUri:
     try:
-        from google.cloud import storage  # type: ignore[import]
+        from google.cloud import storage
     except ImportError:
         raise ImportError("Install anyuri[gcs] for GCS support: pip install anyuri[gcs]")
     client = storage.Client()
@@ -19,7 +19,7 @@ def _gcs_download(uri: GSUri, target: FileUri) -> FileUri:
 @register_upload(GSUri)
 def _gcs_upload(src: FileUri, dst: GSUri) -> GSUri:
     try:
-        from google.cloud import storage  # type: ignore[import]
+        from google.cloud import storage
     except ImportError:
         raise ImportError("Install anyuri[gcs] for GCS support: pip install anyuri[gcs]")
     client = storage.Client()

@@ -8,7 +8,7 @@ from anyuri.providers._r2 import R2Uri
 @register_download(R2Uri)
 def _r2_download(uri: R2Uri, target: FileUri) -> FileUri:
     try:
-        import boto3  # type: ignore[import]
+        import boto3
     except ImportError:
         raise ImportError("Install anyuri[r2] for R2 support: pip install anyuri[r2]")
     path_parts = uri.path.lstrip("/").split("/", 1)
@@ -22,7 +22,7 @@ def _r2_download(uri: R2Uri, target: FileUri) -> FileUri:
 @register_upload(R2Uri)
 def _r2_upload(src: FileUri, dst: R2Uri) -> R2Uri:
     try:
-        import boto3  # type: ignore[import]
+        import boto3
     except ImportError:
         raise ImportError("Install anyuri[r2] for R2 support: pip install anyuri[r2]")
     path_parts = dst.path.lstrip("/").split("/", 1)

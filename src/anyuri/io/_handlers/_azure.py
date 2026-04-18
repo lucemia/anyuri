@@ -8,7 +8,7 @@ from anyuri.providers._azure import AzureUri
 @register_download(AzureUri)
 def _azure_download(uri: AzureUri, target: FileUri) -> FileUri:
     try:
-        from azure.storage.blob import BlobServiceClient  # type: ignore[import]
+        from azure.storage.blob import BlobServiceClient
     except ImportError:
         raise ImportError("Install anyuri[azure] for Azure support: pip install anyuri[azure]")
     # _parsed is backed by as_uri() which is abfs://container@account.dfs.core.windows.net/path
@@ -24,7 +24,7 @@ def _azure_download(uri: AzureUri, target: FileUri) -> FileUri:
 @register_upload(AzureUri)
 def _azure_upload(src: FileUri, dst: AzureUri) -> AzureUri:
     try:
-        from azure.storage.blob import BlobServiceClient  # type: ignore[import]
+        from azure.storage.blob import BlobServiceClient
     except ImportError:
         raise ImportError("Install anyuri[azure] for Azure support: pip install anyuri[azure]")
     account = (dst._parsed.hostname or "").split(".")[0]
