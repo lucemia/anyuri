@@ -26,4 +26,11 @@ jobs:
         run: uv sync --python ${{ matrix.python-version }}
 
       - name: Run tests
-        run: uv run pytest --cov=anyuri --cov-report=term-missing -v
+        run: uv run pytest --cov=anyuri --cov-report=term-missing --cov-report=xml -v
+
+      - name: Upload coverage to Codecov
+        if: matrix.python-version == '3.12'
+        uses: codecov/codecov-action@v4
+        with:
+          files: coverage.xml
+          token: ${{ secrets.CODECOV_TOKEN }}

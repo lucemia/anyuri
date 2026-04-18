@@ -1,6 +1,22 @@
 # anyuri
 
+[![Tests](https://github.com/lucemia/anyuri/actions/workflows/test.yml/badge.svg)](https://github.com/lucemia/anyuri/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/lucemia/anyuri/branch/main/graph/badge.svg)](https://codecov.io/gh/lucemia/anyuri)
+[![Docs](https://img.shields.io/badge/docs-lucemia.github.io%2Fanyuri-blue)](https://lucemia.github.io/anyuri/)
+
 Polymorphic URI types for Python. `AnyUri` auto-dispatches to the right subclass based on the input string, works as a plain `str`, and integrates with Pydantic v1/v2.
+
+## The Problem
+
+Python data pipelines routinely handle assets from multiple backends — a thumbnail might live at `gs://bucket/img.jpg`, a report at `s3://bucket/report.pdf`, and a local fixture at `/tmp/test.png`. Without a shared abstraction, code degrades into scattered `if uri.startswith("gs://")` checks, duplicated normalization logic, and type annotations that lie (`str` accepts anything).
+
+Cloud storage also has a dual-representation problem: the same GCS object is `gs://bucket/key` in SDK calls but `https://storage.googleapis.com/bucket/key` in HTTP clients and CDNs. Converting between them by hand is error-prone and leaks storage-specific logic everywhere.
+
+`anyuri` solves both:
+
+- **Polymorphic dispatch** — `AnyUri(value)` returns the right subtype for the scheme; your code branches on type, not string prefixes.
+- **Dual representation** — `as_uri()` gives the canonical SDK form; `str(uri)` gives the HTTPS form accepted by any HTTP client. Conversion is automatic.
+- **Zero friction** — every `AnyUri` subclass *is* a `str`, so it passes to any existing API without casting or adapters.
 
 ```python
 from anyuri import AnyUri
