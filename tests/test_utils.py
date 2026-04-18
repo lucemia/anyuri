@@ -1,4 +1,5 @@
 import pytest
+
 from anyuri._exceptions import UriSchemaError
 from anyuri._utils import normalize_url, uri_to_path
 

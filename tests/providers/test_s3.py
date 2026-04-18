@@ -1,4 +1,5 @@
 import pytest
+
 from anyuri import AnyUri
 from anyuri._exceptions import UriSchemaError
 from anyuri.providers._s3 import S3Uri  # importing registers S3Uri

@@ -1,4 +1,5 @@
 import pytest
+
 from anyuri import AnyUri
 from anyuri._exceptions import UriSchemaError
 from anyuri.providers._b2 import B2Uri  # importing registers B2Uri

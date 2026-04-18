@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-from typing import Any
 
 import pydantic
 import pytest
@@ -8,7 +7,6 @@ from syrupy.assertion import SnapshotAssertion
 from syrupy.extensions.json import JSONSnapshotExtension
 
 from anyuri import AnyUri, FileUri, HttpUri
-from anyuri._exceptions import UriSchemaError
 from tests.conftest import parse_obj_as
 
 

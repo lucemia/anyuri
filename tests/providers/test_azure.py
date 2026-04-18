@@ -1,4 +1,5 @@
 import pytest
+
 from anyuri import AnyUri
 from anyuri._exceptions import UriSchemaError
 from anyuri.providers._azure import AzureUri  # importing registers AzureUri

@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any, no_type_check
 
 import pytest
+
 from anyuri import AnyUri
 
 

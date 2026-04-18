@@ -5,8 +5,8 @@ from __future__ import annotations
 from typing import Any
 from urllib.parse import urlparse
 
-from anyuri._exceptions import UriSchemaError
 from anyuri import AnyUri
+from anyuri._exceptions import UriSchemaError
 
 
 class B2Uri(AnyUri):
