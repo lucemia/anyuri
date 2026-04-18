@@ -37,6 +37,12 @@ dev = [
     "ruff>=0.4.0",
     "build>=1.0",
     "pydantic>=2.0",
+    "mkdocs>=1.5.3",
+    "mkdocs-material>=9.5.20",
+    "mkdocstrings>=0.25.0",
+    "mkdocstrings-python",
+    "pymdown-extensions",
+    "griffe-inherited-docstrings>=1.0.0",
 ]
 
 [tool.setuptools.packages.find]
