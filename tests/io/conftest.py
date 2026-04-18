@@ -4,7 +4,7 @@ from anyuri.io._registry import _download_registry, _upload_registry
 
 
 @pytest.fixture
-def clean_io_registry() -> None:
+def clean_io_registry():
     orig_down = dict(_download_registry)
     orig_up = dict(_upload_registry)
     yield

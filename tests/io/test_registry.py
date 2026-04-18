@@ -1,9 +1,7 @@
 # tests/io/test_registry.py
-from anyuri._exceptions import DownloadError, UriSchemaError, UploadError
-import pathlib
+from anyuri._exceptions import DownloadError, UploadError
 
 from anyuri import AnyUri, FileUri
-from anyuri._exceptions import UriSchemaError
 from anyuri.io._registry import (
     _download_registry,
     _upload_registry,
