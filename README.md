@@ -1,5 +1,9 @@
 # anyuri
 
+[![Tests](https://github.com/lucemia/anyuri/actions/workflows/test.yml/badge.svg)](https://github.com/lucemia/anyuri/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/lucemia/anyuri/branch/main/graph/badge.svg)](https://codecov.io/gh/lucemia/anyuri)
+[![Docs](https://img.shields.io/badge/docs-lucemia.github.io%2Fanyuri-blue)](https://lucemia.github.io/anyuri/)
+
 Polymorphic URI types for Python. `AnyUri` auto-dispatches to the right subclass based on the input string, works as a plain `str`, and integrates with Pydantic v1/v2.
 
 ```python
