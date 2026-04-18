@@ -1,0 +1,50 @@
+[project]
+name = "anyuri"
+dynamic = ["version"]
+description = "Polymorphic URI types for Python: AnyUri, HttpUri, FileUri, GSUri, S3Uri, AzureUri, R2Uri, B2Uri"
+authors = [{ name = "lucemia", email = "lucemia@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+license = { text = "MIT" }
+keywords = ["uri", "url", "gcs", "s3", "azure", "pydantic"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/lucemia/anyuri"
+Repository = "https://github.com/lucemia/anyuri"
+
+[project.optional-dependencies]
+gcs     = ["google-cloud-storage"]
+s3      = ["boto3"]
+azure   = ["azure-storage-blob"]
+r2      = ["boto3"]
+b2      = ["b2sdk"]
+all     = ["google-cloud-storage", "boto3", "azure-storage-blob", "b2sdk"]
+pydantic = ["pydantic>=1.0"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=5.0.0",
+    "pytest-datadir>=1.5.0",
+    "syrupy>=4.6.0",
+    "mypy>=1.9.0",
+    "ruff",
+    "pydantic>=2.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["*tests*", "*__pycache__*"]
+
+[tool.setuptools_scm]
+fallback_version = "0.0.0"
+
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
