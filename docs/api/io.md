@@ -18,7 +18,7 @@ Register handlers for your own URI types using the same decorators the built-in 
 
 ```python
 from anyuri import AnyUri, FileUri
-from anyuri.io._registry import register_download, register_upload
+from anyuri.io import register_download, register_upload
 
 @AnyUri.register
 class SFTPUri(AnyUri): ...

@@ -19,6 +19,7 @@ This page compares `anyuri` with other Python URI/URL libraries across the featu
 | URI ↔ HTTPS conversion | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Extensible (custom types) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Zero hard dependencies | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Download / upload I/O | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
 
 ## Package Summaries
 

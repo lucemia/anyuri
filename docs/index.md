@@ -19,6 +19,8 @@ pip install anyuri                  # core only (HttpUri, FileUri)
 pip install anyuri[gcs]             # + GSUri
 pip install anyuri[s3]              # + S3Uri
 pip install anyuri[azure]           # + AzureUri
+pip install anyuri[r2]              # + R2Uri (Cloudflare R2)
+pip install anyuri[b2]              # + B2Uri (Backblaze B2)
 pip install anyuri[all]             # all cloud providers
 pip install anyuri[all,pydantic]    # + Pydantic integration
 ```
@@ -34,12 +36,18 @@ from anyuri.io import download, upload
 # Download any URI to a local temp file
 local = download("gs://bucket/video.mp4")
 local = download("s3://bucket/video.mp4")
+local = download("abfs://container@account/video.mp4")
+local = download("r2://accountid/bucket/video.mp4")
+local = download("b2://bucket/video.mp4")
 local = download("https://example.com/video.mp4")
 
 # Upload to cloud (trailing / → auto-generated filename)
-result = upload("/local/video.mp4", "gs://bucket/videos/")   # → GSUri
-result = upload("/local/video.mp4", "s3://bucket/out.mp4")   # → S3Uri
-result = upload("gs://src/video.mp4", "s3://dst/")           # cloud-to-cloud
+result = upload("/local/video.mp4", "gs://bucket/videos/")            # → GSUri
+result = upload("/local/video.mp4", "s3://bucket/out.mp4")            # → S3Uri
+result = upload("/local/video.mp4", "abfs://container@account/out/")  # → AzureUri
+result = upload("/local/video.mp4", "r2://accountid/bucket/")         # → R2Uri
+result = upload("/local/video.mp4", "b2://bucket/out.mp4")            # → B2Uri
+result = upload("gs://src/video.mp4", "s3://dst/")                    # cloud-to-cloud
 ```
 
 ## Supported URI Types
