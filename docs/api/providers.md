@@ -7,5 +7,3 @@
 ::: anyuri.providers.AzureUri
 
 ::: anyuri.providers.R2Uri
-
-::: anyuri.providers.B2Uri
