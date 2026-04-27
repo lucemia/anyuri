@@ -1,7 +1,7 @@
 [project]
 name = "anyuri"
 dynamic = ["version"]
-description = "Polymorphic URI types for Python: AnyUri, HttpUri, FileUri, GSUri, S3Uri, AzureUri, R2Uri, B2Uri"
+description = "Polymorphic URI types for Python: AnyUri, HttpUri, FileUri, GSUri, S3Uri, AzureUri, R2Uri"
 authors = [{ name = "lucemia", email = "lucemia@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.10"
@@ -23,8 +23,7 @@ gcs     = ["google-cloud-storage"]
 s3      = ["boto3"]
 azure   = ["azure-storage-blob"]
 r2      = ["boto3"]
-b2      = ["b2sdk"]
-all     = ["google-cloud-storage", "boto3", "azure-storage-blob", "b2sdk"]
+all     = ["google-cloud-storage", "boto3", "azure-storage-blob"]
 pydantic = ["pydantic>=2.0"]
 
 [dependency-groups]

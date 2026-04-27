@@ -14,7 +14,7 @@ This page compares `anyuri` with other Python URI/URL libraries across the featu
 | GCS (`gs://`) | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
 | S3 (`s3://`) | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
 | Azure Blob Storage | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
-| R2 / B2 | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| R2 (`r2://`) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Polymorphic dispatch | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | URI ↔ HTTPS conversion | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Extensible (custom types) | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |

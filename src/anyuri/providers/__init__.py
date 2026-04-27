@@ -10,9 +10,8 @@ Importing from this module registers the providers with AnyUri automatically:
 """
 
 from anyuri.providers._azure import AzureUri
-from anyuri.providers._b2 import B2Uri
 from anyuri.providers._gcs import GSUri
 from anyuri.providers._r2 import R2Uri
 from anyuri.providers._s3 import S3Uri
 
-__all__ = ["GSUri", "S3Uri", "AzureUri", "R2Uri", "B2Uri"]
+__all__ = ["GSUri", "S3Uri", "AzureUri", "R2Uri"]

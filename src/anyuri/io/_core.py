@@ -43,7 +43,7 @@ def download(uri: AnyUri | str) -> FileUri:
 
     Args:
         uri: Any supported URI — ``https://``, ``gs://``, ``s3://``,
-            ``abfs://``, ``r2://``, ``b2://``, or a local path/``file://``.
+            ``abfs://``, ``r2://``, or a local path/``file://``.
             Accepts a plain string or any ``AnyUri`` subclass.
 
     Returns:
@@ -76,7 +76,7 @@ def upload(src: AnyUri | str, dst: AnyUri | str) -> AnyUri:
         src: Source file — a local path, ``file://`` URI, or any remote URI
             (which will be downloaded automatically before uploading).
         dst: Destination URI. Must be a supported cloud provider scheme
-            (``gs://``, ``s3://``, ``abfs://``, ``r2://``, ``b2://``).
+            (``gs://``, ``s3://``, ``abfs://``, ``r2://``).
             Append a trailing ``/`` to auto-generate a filename.
 
     Returns:

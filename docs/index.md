@@ -20,7 +20,6 @@ pip install anyuri[gcs]             # + GSUri
 pip install anyuri[s3]              # + S3Uri
 pip install anyuri[azure]           # + AzureUri
 pip install anyuri[r2]              # + R2Uri (Cloudflare R2)
-pip install anyuri[b2]              # + B2Uri (Backblaze B2)
 pip install anyuri[all]             # all cloud providers
 pip install anyuri[all,pydantic]    # + Pydantic integration
 ```
@@ -38,7 +37,6 @@ local = download("gs://bucket/video.mp4")
 local = download("s3://bucket/video.mp4")
 local = download("abfs://container@account/video.mp4")
 local = download("r2://accountid/bucket/video.mp4")
-local = download("b2://bucket/video.mp4")
 local = download("https://example.com/video.mp4")
 
 # Upload to cloud (trailing / → auto-generated filename)
@@ -46,7 +44,6 @@ result = upload("/local/video.mp4", "gs://bucket/videos/")            # → GSUr
 result = upload("/local/video.mp4", "s3://bucket/out.mp4")            # → S3Uri
 result = upload("/local/video.mp4", "abfs://container@account/out/")  # → AzureUri
 result = upload("/local/video.mp4", "r2://accountid/bucket/")         # → R2Uri
-result = upload("/local/video.mp4", "b2://bucket/out.mp4")            # → B2Uri
 result = upload("gs://src/video.mp4", "s3://dst/")                    # cloud-to-cloud
 ```
 
@@ -60,4 +57,3 @@ result = upload("gs://src/video.mp4", "s3://dst/")                    # cloud-to
 | `S3Uri` | `s3://`, virtual-hosted/path-style HTTPS | `s3://bucket/key` | `https://bucket.s3.amazonaws.com/key` |
 | `AzureUri` | `abfs://`, `abfss://`, `https://*.blob.core.windows.net/` | `abfs://container@account/path` | `https://account.blob.core.windows.net/container/path` |
 | `R2Uri` | `r2://`, `https://*.r2.cloudflarestorage.com/` | `r2://account/bucket/key` | `https://account.r2.cloudflarestorage.com/bucket/key` |
-| `B2Uri` | `b2://`, `https://f*.backblazeb2.com/file/` | `b2://bucket/key` | `b2://bucket/key` |

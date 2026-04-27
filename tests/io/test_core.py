@@ -148,13 +148,12 @@ def test_all_providers_registered_after_import() -> None:
     from anyuri import FileUri
     from anyuri.io._registry import _download_registry, _upload_registry
     from anyuri.providers._azure import AzureUri
-    from anyuri.providers._b2 import B2Uri
     from anyuri.providers._gcs import GSUri
     from anyuri.providers._r2 import R2Uri
     from anyuri.providers._s3 import S3Uri
 
-    for uri_cls in [HttpUri, FileUri, GSUri, S3Uri, AzureUri, R2Uri, B2Uri]:
+    for uri_cls in [HttpUri, FileUri, GSUri, S3Uri, AzureUri, R2Uri]:
         assert uri_cls in _download_registry, f"No download handler for {uri_cls.__name__}"
 
-    for uri_cls in [GSUri, S3Uri, AzureUri, R2Uri, B2Uri]:
+    for uri_cls in [GSUri, S3Uri, AzureUri, R2Uri]:
         assert uri_cls in _upload_registry, f"No upload handler for {uri_cls.__name__}"

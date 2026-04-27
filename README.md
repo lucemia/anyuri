@@ -102,7 +102,6 @@ uri == "https://storage.googleapis.com/bucket/key.jpg"  # True
 | `S3Uri` | `s3://`, virtual-hosted/path-style HTTPS | `s3://bucket/key` | `https://bucket.s3.amazonaws.com/key` |
 | `AzureUri` | `abfs://`, `abfss://`, `https://*.blob.core.windows.net/` | `abfs://container@account.dfs.core.windows.net/path` | `https://account.blob.core.windows.net/container/path` |
 | `R2Uri` | `r2://`, `https://*.r2.cloudflarestorage.com/` | `r2://account/bucket/key` | `https://account.r2.cloudflarestorage.com/bucket/key` |
-| `B2Uri` | `b2://`, `https://f*.backblazeb2.com/file/` | `b2://bucket/key` | `b2://bucket/key` |
 
 ## Pydantic Integration
 
